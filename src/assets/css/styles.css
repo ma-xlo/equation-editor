@@ -1,0 +1,141 @@
+body {
+    margin: 0;
+}
+.symbol-btn{
+    background-color: #eeeeee;
+    color: rgb(88, 88, 88);
+    height: 25px;
+    width: 25px;
+    font-size: 12px;
+    border: 1px solid rgb(199, 199, 199);
+    border-radius: 7px;
+    -webkit-transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+    outline: none;
+    transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+    margin: 1px;
+    
+}
+.symbol-btn:hover,
+.symbol-btn:hover {
+    background-color: #cccccc;
+}
+
+#insert-btn {
+    display: block;
+    height: 35px;
+    width: 345px;
+    font-size: 15px;
+    margin: auto;
+    margin-top: 10px;
+    color: white;
+    background-color: #0070f3;
+    border: none;
+    border-radius: 7px;
+    -webkit-transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+    outline: none;
+    transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+}
+
+#equation-area:focus{
+    box-shadow: 0px 0px 5px 2px #82b0f5;
+    outline: none;
+}
+
+#insert-btn:active{
+    background-color: rgb(32, 136, 255);
+    outline: none;
+}
+
+#insert-btn:hover{
+    background-color: rgb(32, 136, 255);
+    outline: none;
+}
+
+.box-btn{
+    margin: 20px 0px 0px 142px;
+    position: absolute;
+}
+
+.btn-box {
+    background-color: #ffffff;
+    border-radius: 7px;
+
+}
+.clear-btn {
+    margin: 50px 0px 0px 142px;
+    position: absolute;
+}
+
+.disabled {
+    display: none;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 55%;
+}
+
+.modal {
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+.editor-btn {
+    display: block;
+    height: 35px;
+    width: 150px;
+    font-size: 15px;
+    margin: auto;
+    margin-top: 10px;
+    background-color: #eeeeee;
+    color: rgb(88, 88, 88);
+    border: none;
+    border-radius: 7px;
+    -webkit-transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+    outline: none;
+    transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+}
+#editor-questao {
+    max-width: 50%;
+  }
+
+.editor-btn:hover,
+.editor-btn:hover {
+    background-color: #cccccc;
+}
+
+.panel1, .panel2{
+    display: inline-block;
+}
+
+.vl {
+    border-left: 1px solid rgb(147, 147, 147);
+    height: 60px;
+    display: inline-block;
+    margin: 0px 8px 0px 10px;
+}

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script async src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.5/dist/html2canvas.min.js" async></script>
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML" async> </script>
+    <script src="https://cloud.tinymce.com/stable/tinymce.min.js?apiKey=2sd18x5qpwq89vmm2pqbg338f2klemk3zgsc4c8vtw65rouv"></script>
+
+    <script>
+    window.MathJax = {
+        jax: ["input/TeX", "output/SVG"],
+        extensions: ["tex2jax.js"],
+        SVG: {
+            useGlobalCache: false
+        }
+    }
+    </script>
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css"></link>
+</head>
+<body onload="render()">
+    <img style="width: 90px;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Instituto_Federal_de_S%C3%A3o_Paulo_-_Marca_Vertical_2015.svg/1200px-Instituto_Federal_de_S%C3%A3o_Paulo_-_Marca_Vertical_2015.svg.png" alt="">
+    <nav style="margin-bottom: 60px ;display: block; width: 100%; height: 1fr; background-color: green; border: 1px solid green;"></nav>
+
+    <textarea name="" id="editor-questao" cols="40" rows="10" ></textarea>
+    <input type="button" class="editor-btn" id="editor-btn" value="Editor Matemático">
+
+    <div id="modal-btn" class="modal disabled">
+        <div style="text-align: center;" class="modal-content" >
+            <span class="close">&times;</span>
+
+            <h2 style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; text-align: center; margin-bottom: 30px;">Pré-visualização</h2>
+            <div id="equation-box" style="margin-bottom: -20px; font-size: 30px; height: 100px;" draggable="true" ></div>
+            
+            <div class="btn-box disabled" >
+                <div class="panel1">
+                    <input type="button" class="symbol-btn" id="sum-btn"value="∑">
+                    <input type="button" class="symbol-btn" id="prod-btn" value="∏">
+                    <input type="button" class="symbol-btn" id="sqrt-btn" value="√">
+                    <div></div>
+                    <input type="button" class="symbol-btn" id="pi-btn" value="π">
+                    <input type="button" class="symbol-btn" id="euler-btn" value="e">
+                    <input type="button" class="symbol-btn" id="integral-btn" value="∫">
+                    <div></div>
+                    <input type="button" class="symbol-btn" id="real-btn" value="ℝ">
+                    <input type="button" class="symbol-btn" id="pm-btn" value="±">
+                    <input type="button" class="symbol-btn" id="approx-btn" value="≅">
+                </div>
+                <div class="vl"></div>
+                <div class="panel2">
+                    <input style="font-size: 12px;" type="button" class="symbol-btn" id="frac-btn" value="a/b">
+                    <input type="button" class="symbol-btn" id="delta-btn" value="Δ">
+                    <input type="button" class="symbol-btn" id="log-btn" value="ln">
+
+                    <div></div>
+                    <input type="button" class="symbol-btn" id="" value="n">
+                    <input type="button" class="symbol-btn" id="" value="n">
+                    <input type="button" class="symbol-btn" id="" value="n">
+                    <div></div>
+                    <input type="button" class="symbol-btn" id="" value="n">
+                    <input type="button" class="symbol-btn" id="" value="n">
+                    <input type="button" class="symbol-btn" id="" value="n">
+                </div>
+                <div class="vl"></div>
+                <div class="panel2">
+                    <input type="button" class="symbol-btn" id="" value="n">
+                    <input type="button" class="symbol-btn" id="" value="n">
+                    <input type="button" class="symbol-btn" id="" value="n">
+                    <div></div>
+                    <input type="button" class="symbol-btn" id="" value="n">
+                    <input type="button" class="symbol-btn" id="" value="n">
+                    <input type="button" class="symbol-btn" id="" value="n">
+                    <div></div>
+                    <input type="button" class="symbol-btn" id="" value="n">
+                    <input type="button" class="symbol-btn" id="" value="n">
+                    <input type="button" class="symbol-btn" id="" value="n">
+                </div>
+                <div class="vl"></div>
+                <div class="panel2">
+                    <input type="button" class="symbol-btn" id="" value="n">
+                    <input type="button" class="symbol-btn" id="" value="n">
+                    <input type="button" class="symbol-btn" id="" value="n">
+                    <div></div>
+                    <input type="button" class="symbol-btn" id="" value="n">
+                    <input type="button" class="symbol-btn" id="" value="n">
+                    <input type="button" class="symbol-btn" id="" value="n">
+                    <div></div>
+                    <input type="button" class="symbol-btn" id="" value="n">
+                    <input type="button" class="symbol-btn" id="" value="n">
+                    <input type="button" class="symbol-btn" id="" value="n">
+                </div>
+                <div class="vl"></div>
+                <div class="panel2">
+                    <input type="button" class="symbol-btn" id="" value="n">
+                    <input type="button" class="symbol-btn" id="" value="n">
+                    <input type="button" class="symbol-btn" id="" value="n">
+                    <div></div>
+                    <input type="button" class="symbol-btn" id="" value="n">
+                    <input type="button" class="symbol-btn" id="" value="n">
+                    <input type="button" class="symbol-btn" id="" value="n">
+                    <div></div>
+                    <input type="button" class="symbol-btn" id="" value="n">
+                    <input type="button" class="symbol-btn" id="" value="n">
+                    <input type="button" class="symbol-btn" id="" value="n">
+                </div>
+            </div>
+
+            <input type="button" class="symbol-btn box-btn" id="btn-box" value="≡">
+            <input type="button" class="symbol-btn clear-btn" id="clear-btn" value="C">
+            
+            <p></p>
+            <textarea style="border-radius: 5px ;border: 1px solid rgb(168, 168, 168); resize: none;" id="equation-area" rows="6" cols="40"></textarea>
+            <input type="button" id="insert-btn" value="Inserir">
+
+        </div>
+    </div>
+            <div style="text-align: center; margin-top: 20px; height: 50px; width: 50px;" id="img-screenshot" draggable="true">
+        
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
