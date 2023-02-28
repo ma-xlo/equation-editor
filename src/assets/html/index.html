@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML" async> </script>
+
+</script>
+    <script>
+    window.MathJax = {
+        jax: ["input/TeX", "output/SVG"],
+        extensions: ["tex2jax.js"],
+        SVG: {
+            useGlobalCache: false
+        }
+    }
+    </script>
+    <title>Editor Matemático</title>
+    <link rel="stylesheet" href="../css/styles.css"></link>
+</head>
+<body>
+    <div>
+    </div>
+    <div class="container">
+        <div class="equation-box">
+            <div type="text" class="equation-preview">
+                <span id="equation-preview"></span>
+            </div>
+            <div class="equation-btn-box">
+                <button>&#x2630</button>
+                <button>C</button>
+            </div>
+        </div>
+        <div class="item">
+            <textarea name="" id="equation-input"></textarea>
+        </div>
+        <div class="item">
+            <button class="generator-btn">Inserir</button>
+        </div>
+    </div>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>
