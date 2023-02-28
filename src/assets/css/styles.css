@@ -66,10 +66,11 @@ body{
 .container textarea{
     height: 80px;
     resize: none;
-    width: 98%;
+    width: 100%;
     outline: none;
     border-radius: 7px;
     padding-left: 5px;
+    box-sizing: border-box;
 }
 
 .generator-btn{
