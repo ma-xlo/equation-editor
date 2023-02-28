@@ -1,141 +1,89 @@
-body {
+body{
     margin: 0;
-}
-.symbol-btn{
-    background-color: #eeeeee;
-    color: rgb(88, 88, 88);
-    height: 25px;
-    width: 25px;
-    font-size: 12px;
-    border: 1px solid rgb(199, 199, 199);
-    border-radius: 7px;
-    -webkit-transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
-    outline: none;
-    transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
-    margin: 1px;
-    
-}
-.symbol-btn:hover,
-.symbol-btn:hover {
-    background-color: #cccccc;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(231, 231, 231);
+
 }
 
-#insert-btn {
-    display: block;
+.container {
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    width: 50%;
+    padding: 50px 50px 20px 50px;
+    border:1px solid rgb(200, 200, 200);
+    border-radius: 7px;
+
+}
+
+.equation-box{
+    display: flex;
+    gap: 5px;
+    padding: 2px;
+    width: 100%;
+    margin-bottom: 15px;
+
+}
+
+.equation-preview{
+    text-align: center;
+    justify-content: center;
+    width: 100%;
+    height: fit-content;
+    border: none;
+    /* border:1px solid rgb(200,200,200); */
+    font-size: 25pt;
+    outline: none;
+}
+
+.equation-btn-box{
+    display: flex;
+    flex-direction: column;
+    /* border:1px solid rgb(255, 0, 0); */
+
+}
+.equation-btn-box button{
+    background-color: #e4e4e4;
+    border: 1px solid #e4e4e4;
+    border-radius: 5px;
+    outline: none;
+    width: 30px;
+    height: 30px;
+    transition: 0.4s;
+    margin-bottom: 5px;
+}
+
+.equation-btn-box button:hover{
+    background-color: #cacaca;
+}
+
+.container textarea{
+    height: 80px;
+    resize: none;
+    width: 98%;
+    outline: none;
+    border-radius: 7px;
+    padding-left: 5px;
+}
+
+.generator-btn{
+    background-color: rgb(0, 110, 255);
+    color: rgb(255, 255, 255);
+    font-size: 11pt;
+    font-weight: 500;
+    width: 100%;
     height: 35px;
-    width: 345px;
-    font-size: 15px;
-    margin: auto;
-    margin-top: 10px;
-    color: white;
-    background-color: #0070f3;
     border: none;
     border-radius: 7px;
-    -webkit-transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
-    outline: none;
-    transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+    transition: 0.4s;
 }
 
-#equation-area:focus{
-    box-shadow: 0px 0px 5px 2px #82b0f5;
-    outline: none;
-}
-
-#insert-btn:active{
-    background-color: rgb(32, 136, 255);
-    outline: none;
-}
-
-#insert-btn:hover{
-    background-color: rgb(32, 136, 255);
-    outline: none;
-}
-
-.box-btn{
-    margin: 20px 0px 0px 142px;
-    position: absolute;
-}
-
-.btn-box {
-    background-color: #ffffff;
-    border-radius: 7px;
-
-}
-.clear-btn {
-    margin: 50px 0px 0px 142px;
-    position: absolute;
-}
-
-.disabled {
-    display: none;
-}
-
-.modal-content {
-    background-color: #fefefe;
-    margin: auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 55%;
-}
-
-.modal {
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-}
-
-.close {
-    color: #aaaaaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-  }
-  
-  .close:hover,
-  .close:focus {
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
-  }
-
-.editor-btn {
-    display: block;
-    height: 35px;
-    width: 150px;
-    font-size: 15px;
-    margin: auto;
-    margin-top: 10px;
-    background-color: #eeeeee;
-    color: rgb(88, 88, 88);
-    border: none;
-    border-radius: 7px;
-    -webkit-transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
-    outline: none;
-    transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
-}
-#editor-questao {
-    max-width: 50%;
-  }
-
-.editor-btn:hover,
-.editor-btn:hover {
-    background-color: #cccccc;
-}
-
-.panel1, .panel2{
-    display: inline-block;
-}
-
-.vl {
-    border-left: 1px solid rgb(147, 147, 147);
-    height: 60px;
-    display: inline-block;
-    margin: 0px 8px 0px 10px;
+.generator-btn:hover{
+    background-color: rgb(69, 149, 254);
 }
