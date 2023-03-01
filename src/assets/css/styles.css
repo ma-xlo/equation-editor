@@ -1,12 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Math&family=VT323&display=swap');
+
 body{
     margin: 0;
     height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: rgb(231, 231, 231);
-
+    background-color: rgb(245, 245, 245);
+    gap: 10px;
 }
+
+trix-editor{
+    background-color: #ffffff;
+    width: 650px;
+    height: 260px;
+    box-sizing: border-box;
+}
+
 
 .container {
     background-color: rgb(255, 255, 255);
@@ -14,11 +25,14 @@ body{
     justify-content: center;
     flex-direction: column;
     flex-wrap: wrap;
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
 
     width: 50%;
     padding: 50px 50px 20px 50px;
-    border:1px solid rgb(200, 200, 200);
+    border:1px solid rgb(243, 243, 243);
     border-radius: 7px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.193);
 
 }
 
@@ -32,13 +46,13 @@ body{
 }
 
 .equation-preview{
+    font-family: 'Noto Sans Math', sans-serif;
     text-align: center;
     justify-content: center;
     width: 100%;
     height: fit-content;
     border: none;
-    /* border:1px solid rgb(200,200,200); */
-    font-size: 25pt;
+    font-size: 20px;
     outline: none;
 }
 
@@ -70,6 +84,7 @@ body{
     outline: none;
     border-radius: 7px;
     padding-left: 5px;
+    border: 1px solid rgb(180, 180, 180);
     box-sizing: border-box;
 }
 
@@ -82,9 +97,46 @@ body{
     height: 35px;
     border: none;
     border-radius: 7px;
-    transition: 0.4s;
+    transition: 0.4s ease-in-out;
 }
 
 .generator-btn:hover{
     background-color: rgb(69, 149, 254);
+    cursor: pointer;
+}
+
+.editor-btn {
+    background-color: rgb(0, 110, 255);
+    color: rgb(255, 255, 255);
+    font-size: 11pt;
+    font-weight: 500;
+    width: 100px;
+    height: 35px;
+    border: none;
+    border-radius: 7px;
+    transition: 0.4s ease-in-out;
+}
+
+.editor-btn:hover{
+    background-color: rgb(69, 149, 254);
+    cursor: pointer;
+}
+
+.editor-close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    background-color: transparent;
+    border: none;
+    font-size: 14pt;
+}
+.editor-close-btn:hover {
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.hide{
+    display: none;
 }
