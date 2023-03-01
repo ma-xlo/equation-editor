@@ -13,8 +13,8 @@ body{
 
 trix-editor{
     background-color: #ffffff;
-    width: 650px;
-    height: 260px;
+    width: 50%;
+    height: 240px;
     box-sizing: border-box;
 }
 
@@ -25,15 +25,17 @@ trix-editor{
     justify-content: center;
     flex-direction: column;
     flex-wrap: wrap;
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-
-    width: 50%;
-    padding: 50px 50px 20px 50px;
-    border:1px solid rgb(243, 243, 243);
+    position: absolute;
+    width: 400px;
+    padding: 10px 20px 20px 20px;
+    border:1px solid rgb(210, 210, 210);
     border-radius: 7px;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.193);
+}
 
+.item   {
+    display: flex;
+    flex-direction: row-reverse;
 }
 
 .equation-box{
@@ -50,15 +52,19 @@ trix-editor{
     text-align: center;
     justify-content: center;
     width: 100%;
-    height: fit-content;
+    height: 50px;
     border: none;
     font-size: 20px;
     outline: none;
+    /* border: 1px solid green; */
+    padding-bottom: 0px;
 }
 
 .equation-btn-box{
     display: flex;
     flex-direction: column;
+    position: absolute;
+    margin: 5px;
     /* border:1px solid rgb(255, 0, 0); */
 
 }
@@ -70,11 +76,12 @@ trix-editor{
     width: 30px;
     height: 30px;
     transition: 0.4s;
-    margin-bottom: 5px;
+    margin-bottom: 3px;
 }
 
 .equation-btn-box button:hover{
     background-color: #cacaca;
+    cursor: pointer;
 }
 
 .container textarea{
@@ -97,6 +104,7 @@ trix-editor{
     height: 35px;
     border: none;
     border-radius: 7px;
+    margin-top: 5px;
     transition: 0.4s ease-in-out;
 }
 
