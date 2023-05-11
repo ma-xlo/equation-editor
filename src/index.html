@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML" async> </script>
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/trix@2.0.0/dist/trix.css">
+    <!--<script type="text/javascript" src="https://unpkg.com/trix@2.0.0/dist/trix.umd.min.js"></script>-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/trix/1.3.0/trix.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <trix-editor></trix-editor>
+    <button class="editor-btn" id="editor-open-btn">Editor</button>
+
+    <div class="editor-container" id="editor-box">
+
+        <div class="symbols-container" id="symbols-box">
+            <div class="symbol-section " id="section-1">
+                <div class="symbol-btn">
+                    <button><img src="img/summation.svg" alt=""></button>
+                    <button><img src="img/product.svg" alt=""></button>
+                    <button><img src="img/coproduct.svg" alt=""></button>
+                    <button><img style="width: 10px;" src="img/integral.svg" alt=""></button>
+                    <button><img src="img/limit.svg" alt=""></button>
+                    <div class="hidden-symbols hide" id="hidden-section-1">
+                        <button><img src="img/summation.svg" alt=""></button>
+                        <button><img src="img/product.svg" alt=""></button>
+                        <button><img src="img/coproduct.svg" alt=""></button>
+                        <button><img style="width: 10px;" src="img/integral.svg" alt=""></button>
+                        <button><img src="img/limit.svg" alt=""></button>
+                        <button><img src="img/summation.svg" alt=""></button>
+                        <button><img src="img/product.svg" alt=""></button>
+                        <button><img src="img/coproduct.svg" alt=""></button>
+                        <button><img style="width: 10px;" src="img/integral.svg" alt=""></button>
+                        <button><img src="img/limit.svg" alt=""></button>
+                        <button><img src="img/summation.svg" alt=""></button>
+                        <button><img src="img/product.svg" alt=""></button>
+                        <button><img src="img/coproduct.svg" alt=""></button>
+                        <button><img style="width: 10px;" src="img/integral.svg" alt=""></button>
+                        <button><img src="img/limit.svg" alt=""></button>
+                        <button><img src="img/summation.svg" alt=""></button>
+                        <button><img src="img/product.svg" alt=""></button>
+                        <button><img src="img/coproduct.svg" alt=""></button>
+                        <button><img style="width: 10px;" src="img/integral.svg" alt=""></button>
+                        <button><img src="img/limit.svg" alt=""></button>
+                    </div>
+                </div>
+
+            </div>
+            <div class="symbol-section" id="section-2">
+                <div>
+                    <button><img src="img/constants/pi.svg" alt=""></button>
+                    <button><img src="img/constants/lambda.svg" alt=""></button>
+                    <button><img src="img/constants/euler.svg" alt=""></button>
+                    <button><img src="img/constants/golden-radio.svg" alt=""></button>
+                    <div class="hidden-symbols hide" id="hidden-section-2">
+                        <button><img src="img/constants/somos-quadratic-recurrence.svg" alt=""></button>
+                        <button><img src="img/constants/eistein-gravitational.svg" alt=""></button>
+                        <button><img src="img/constants/thetha.svg" alt=""></button>
+                        <button><img src="img/constants/eistein-gravitational.svg" alt=""></button>
+
+                    </div>
+                </div>
+            </div>
+            <div class="symbol-section">
+                <div class="symbol-btn">
+                    <button><img src="img/left-arrow.svg" alt=""></button>
+                    <button><img src="img/right-arrow.svg" alt=""></button>
+                    <button><img src="img/long-left-arrow.svg" alt=""></button>
+                    <button><img src="img/long-right-arrow.svg" alt=""></button>
+                </div>
+            </div>
+            <div class="symbol-section">
+                <div class="symbol-btn">
+                    <button><img src="img/trigonometry/sin.svg" alt=""></button>
+                    <button><img src="img/trigonometry/cos.svg" alt=""></button>
+                    <button><img src="img/trigonometry/tan.svg" alt=""></button>
+                </div>
+            </div>
+            <div class="symbol-section">
+                <div class="symbol-btn">
+                    <button><img src="img/logic/logical-conjunction.svg" alt=""></button>
+                    <button><img src="img/logic/logical-disjunction.svg" alt=""></button>
+                    <button><img src="img/logic/logical-equivalence-short.svg" alt=""></button>
+                    <button><img src="img/logic/logical-equivalence-long.svg" alt=""></button>
+                    <button><img src="img/logic/logical-negation.svg" alt=""></button>
+                </div>
+            </div>
+            <div class="symbol-section">
+                <div>
+                    <button><img src="img/set-operations/intersection-small.svg" alt=""></button>
+                    <button><img src="img/set-operations/intersection-big.svg" alt=""></button>
+                    <button><img src="img/set-operations/union-small.svg" alt=""></button>
+                    <button><img src="img/set-operations/union-big.svg" alt=""></button>
+                </div>
+            </div>
+            <div class="symbol-section">
+                <div class="symbol-btn">
+                    <button><img src="img/square-root.svg" alt=""></button>
+                    <button><img src="img/cube-root.svg" alt=""></button>
+                    <button><img src="img/fourth-root.svg" alt=""></button>
+                    <button><img src="img/nth-root.svg" alt=""></button>
+                </div>
+            </div>
+            <div class="symbol-section">
+                <div class="symbol-btn">
+                    <button>[...]</button>
+                    <button>(...)</button>
+                    <button>|...|</button>
+                    <button>{...}</button>
+                </div>
+            </div>
+        </div>
+        <div class="equation-editor">
+            <div>
+                <button class="editor-close-btn" id="editor-close-btn">&times</button>
+            </div>
+            
+            <div class="equation-area">
+                <div type="text" class="equation-preview">
+                    <span id="equation-preview"></span>
+                </div>
+
+            </div>
+            <div class="item">
+                <textarea name="" id="equation-input"></textarea>
+                <div class="equation-btn-box">
+                    <button id="symbols-box-btn">&#x2630</button>
+                    <button id="clear-btn">C</button>
+                </div>
+            </div>
+            <div class="item">
+                <button class="generator-btn" id="insert-btn">Inserir</button>
+            </div>
+        </div>
+    </div>
+
+   
+    <script src="js/script.js"></script>
+</body>
+</html>
