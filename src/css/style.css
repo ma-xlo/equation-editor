@@ -1,0 +1,233 @@
+@font-face {
+    font-family: 'Asana-Math';
+    src: url('../font/asana-math.otf') format('opentype');
+}
+
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(245, 245, 245);
+    gap: 10px;
+}
+
+trix-editor{
+    background-color: #ffffff;
+    width: 50%;
+    height: 240px;
+}
+
+.editor-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 10px;
+    position: absolute;
+}
+
+.symbols-container{
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 5px;
+    width: 800px;
+    background-color: rgb(255, 255, 255);
+    padding: 10px 10px 10px 10px;
+    border:1px solid rgb(210, 210, 210);
+    border-radius: 7px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.193);
+
+}
+.symbol-btn {
+    display: flex;
+}
+
+.symbol-section {
+    border: 1px solid grey;
+    background-color: rgb(245, 245, 245);
+    border-radius: 7px;
+    /* padding: 19px 5px 16px 5px; */
+    height: 30px;
+}
+
+
+.symbol-section button{
+    /* width: cover; */
+    background-color: transparent;
+    border: none;
+}
+
+.symbol-section button img:hover {
+    scale: 110%;
+    filter: grayscale(100%);
+    cursor: pointer;
+}
+
+.hidden-symbols{
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: rgb(225, 225, 225);
+    border: 1px solid grey;
+    border-radius: 7px;
+    padding: 19px 5px 16px 5px;
+    position: absolute;
+    margin-top: 35px;
+}
+
+.item {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.equation-box{
+    display: flex;
+    gap: 5px;
+    padding: 2px;
+    width: 100%;
+    margin-bottom: 15px;
+
+}
+
+.equation-editor{
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 550px;
+    padding: 20px;
+    border:1px solid rgb(210, 210, 210);
+    border-radius: 7px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.193);
+}
+
+.editor-close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    background-color: transparent;
+    border: none;
+    font-size: 14pt;
+}
+.editor-close-btn:hover {
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.equation-btn-box{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    margin: 5px;
+    /* border:1px solid rgb(255, 0, 0); */
+
+}
+
+.equation-btn-box button{
+    background-color: #e4e4e4;
+    border: 1px solid #e4e4e4;
+    border-radius: 5px;
+    outline: none;
+    width: 30px;
+    height: 30px;
+    transition: 0.4s;
+    margin-bottom: 3px;
+}
+
+.equation-btn-box button:hover{
+    background-color: #cacaca;
+    cursor: pointer;
+}
+
+.equation-area{
+    display: flex;
+    gap: 5px;
+    padding: 2px;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.equation-preview{
+    font-family: 'Noto Sans Math', sans-serif;
+    text-align: center;
+    justify-content: center;
+    width: 100%;
+    height: 90px;
+    border: none;
+    font-size: 30px;
+    outline: none;
+    /* border: 1px solid green; */
+    padding-bottom: 0px;
+}
+
+.generator-btn{
+    background-color: rgb(0, 110, 255);
+    color: rgb(255, 255, 255);
+    font-size: 11pt;
+    font-weight: 500;
+    width: 100%;
+    height: 35px;
+    border: none;
+    border-radius: 7px;
+    margin-top: 5px;
+    transition: 0.4s ease-in-out;
+}
+
+.generator-btn:hover{
+    background-color: rgb(69, 149, 254);
+    cursor: pointer;
+}
+
+
+.editor-container textarea{
+    font-family: 'Asana-Math', sans-serif;
+    height: 80px;
+    font-size: 15px;
+    resize: none;
+    width: 100%;
+    outline: none;
+    border-radius: 7px;
+    padding-left: 5px;
+    border: 1px solid rgb(180, 180, 180);
+    box-sizing: border-box;
+}
+
+.editor-btn {
+    background-color: rgb(0, 110, 255);
+    color: rgb(255, 255, 255);
+    font-size: 11pt;
+    font-weight: 500;
+    width: 100px;
+    height: 35px;
+    border: none;
+    border-radius: 7px;
+    transition: 0.4s ease-in-out;
+    cursor: pointer;
+}
+
+.editor-btn:hover{
+    background-color: rgb(69, 149, 254);
+    cursor: pointer;
+}
+
+.hide{
+    display: none;
+    /* visibility: collapse; */
+}
