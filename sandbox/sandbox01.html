@@ -1,0 +1,31 @@
+<html>
+<head>
+    <style>
+    #div1 {
+        width: 350px;
+        height: 70px;
+        padding: 10px;
+        border: 1px solid #aaaaaa;
+      }
+    </style>
+</head>
+<!-- <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML" async> </script> -->
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
+<script>
+    window.MathJax = {
+        jax: ["input/TeX", "output/SVG"],
+        extensions: ["tex2jax.js"],
+        SVG: {
+            useGlobalCache: false
+        }
+    }
+</script>
+<body onload="render()">
+    <span id="math-tex">\(x = {-b \pm \sqrt{b^2-4ac} \over 2a}\)</span>
+    <textarea name="" id="div1" cols="30" rows="10" ondrop="drop(event)" ondragover="allowDrop(event)"></textarea>
+
+<br>
+</body>
+<script>
+</script>
+</html>
