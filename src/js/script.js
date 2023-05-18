@@ -27,10 +27,15 @@ const deltaButton = document.querySelector('#delta-btn')
 const subsetButton = document.querySelector('#proper-subset-btn')
 const limitBtn = document.querySelector('#limit-btn')
 
-
+// Sections elements /////////////////////////////////////////////////////////////////////////
 const section_1 = document.querySelector("#section-1")
 const section_1_btn = document.querySelectorAll("#section-1 button")
 const hiddenSection_1= document.querySelector("#hidden-section-1")
+
+const constantsSection = document.querySelector("#constant-section")
+const constantsSectionButtons = document.querySelectorAll("#section-1 button")
+const hiddenSection = document.querySelector("#hidden-section-1")
+
 
 section_1_btn.forEach(element => {
     element.addEventListener('mouseover', () => {
@@ -44,22 +49,15 @@ section_1_btn.forEach(element => {
     })
 })
 
-
 section_1.addEventListener('mouseover', ()=>{
-
-    // if(hiddenSection_1.classList.contains('hide'))
         hiddenSection_1.classList.remove('hide')
-    // else
-        // hiddenSection_1.classList.add('hide')
 })
 
 section_1.addEventListener('mouseout', ()=>{
-
-    // if(hiddenSection_1.classList.contains('hide'))
         hiddenSection_1.classList.add('hide')
-    // else
-        // hiddenSection_1.classList.add('hide')
 })
+
+
 
 /// Editor Event Listeners /////////////////////////////////////////////////////////////////////////
 equationInput.addEventListener('keyup', () => {

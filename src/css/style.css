@@ -61,7 +61,7 @@ trix-editor{
     /* border: 1px solid rgb(208, 208, 208); */
     background-color: rgb(234, 234, 234);
     border-radius: 7px;
-    padding: 15px 15px 15px 15px;
+    padding: 15px;
     height: 35px;
 }
 
@@ -83,11 +83,11 @@ trix-editor{
     flex-direction: column;
     align-items: center;
     flex-wrap: wrap;
-    background-color: rgb(225, 225, 225);
-    border-radius: 7px;
+    background-color: rgb(234, 234, 234);
+    border-radius: 7px 7px 7px 7px;
+    padding: 10px;
+    margin-left: -15px;
     position: absolute;
-    padding: 0px 15px 0px 15px;
-    margin-top: 165px;
 }
 
 .item {
@@ -230,21 +230,4 @@ trix-editor{
 
 .hide{
     display: none;
-}
-
-.hidden-section-10{
-    visibility: collapse;
-    position: absolute;
-    background-color: rgb(225, 225, 225);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    background-color: rgb(225, 225, 225);
-    border-radius: 7px;
-    padding: 10px;
-    position: absolute;
-    margin-top: 120px;
-
 }
