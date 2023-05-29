@@ -1,4 +1,4 @@
-/// Editor buttons ///////////////////////////////////////////////////////////////////////////////////
+/// Editor buttons ///////////////////////////////////////////////////////////////////////////
 const equationInput = document.querySelector('#equation-input')
 const equationPreview = document.querySelector('#equation-preview')
 const insertBtn = document.querySelector('#insert-btn')
@@ -12,22 +12,31 @@ const symbolsBoxBtn = document.querySelector("#symbols-box-btn")
 const editorContainer = document.querySelector(".editor-container")
 let element = document.querySelector("trix-editor")
 
-// Buttons  Variables ///////////////////////////////////////////////////////////////////////
-const summationButton = document.querySelector('#summation-btn')
-const productoryBtn = document.querySelector('#productory-btn')
-const sqrtBtn = document.querySelector('#sqrt-btn')
+// Main symbols variables ////////////////////////////////////////////////////////////////////
+const limitBtn = document.querySelector('#limit-btn')
 const integralBtn = document.querySelector('#integral-btn')
-const logButton = document.querySelector('#log-btn')
+const productoryBtn = document.querySelector('#productory-btn')
+const summationButton = document.querySelector('#summation-btn')
+
+// Symbols and constants buttons variables ///////////////////////////////////////////////////
 const piBtn = document.querySelector('#pi-btn')
+const lambdaBtn = document.querySelector('#lambda-btn')
+const deltaBtn = document.querySelector('#delta-btn')
+
+// Logicals buttons variables ////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////
+const sqrtBtn = document.querySelector('#sqrt-btn')
+const logButton = document.querySelector('#log-btn')
 const matrixBracketsButton = document.querySelector('#matrix-brackets-btn')
 const realSymbolBtn = document.querySelector('#real-symbol-btn')
 const elementOfBtn = document.querySelector('#element-of-btn')
 const notElementOfBtn = document.querySelector('#not-element-of-btn')
-const deltaBtn = document.querySelector('#delta-btn')
 const subsetBtn = document.querySelector('#subset-btn')
-const limitBtn = document.querySelector('#limit-btn')
 const plusMinusBtn = document.querySelector('#plus-minus-btn')
 const fractionBtn = document.querySelector('#fraction-btn')
+
 
 // Sections elements /////////////////////////////////////////////////////////////////////////
 // Main section
@@ -172,8 +181,20 @@ limitBtn.addEventListener('click', () => {
 
 summationButton.addEventListener('click', () => {
     equationInput.focus()
+    
     equationInput.value += '\\sum_{i}^{k} '
     equationPreview.innerHTML = `\\(${equationInput.value}\\)`
+
+    var start = element.selectionStart;
+    var end = element.selectionEnd;
+    var scrollTop = element.scrollTop;
+    element.value = element.value.substring(0, start) + text + element.value.substring(end);
+    
+    // Update the caret position and scroll position
+    element.selectionStart = element.selectionEnd = start + text.length;
+    element.scrollTop = scrollTop;
+
+
     MathJax.Hub.Typeset()
 })
 
