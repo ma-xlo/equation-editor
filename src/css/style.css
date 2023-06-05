@@ -63,6 +63,7 @@ trix-editor{
     border-radius: 7px;
     padding: 15px;
     height: 35px;
+    max-width: auto;
 }
 
 
@@ -89,6 +90,7 @@ trix-editor{
     padding: 10px;
     margin-left: -15px;
     position: absolute;
+    width: inherit;
 }
 
 .item {

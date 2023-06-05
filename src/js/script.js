@@ -143,11 +143,17 @@ equationInput.addEventListener('keyup', () => {
     // MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
 })
 
-equationInput.addEventListener('keyup', () => {
+equationInput.addEventListener('keyup', event => {
     equationInput.focus();
     equationPreview.innerHTML = `\\(${equationInput.value}\\)`
-    MathJax.Hub.Typeset()
-    // MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+    // MathJax.Hub.Typeset()
+
+    // if(event.key === 'Enter') {
+    //     equationInput.focus();
+    //     equationInput.value += `\n\\\\`
+    //     MathJax.Hub.Typeset()
+    // }
+    MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
 })
 
 clearBtn.addEventListener('click', () => {
@@ -268,12 +274,16 @@ productoryBtn.addEventListener('click', () => {
     MathJax.Hub.Typeset()
 })
 
-summationButton.addEventListener('click', () => {
-    equationInput.focus()
-    equationInput.value += '\\sum_{i}^{k} '
-    equationPreview.innerHTML = `\\(${equationInput.value}\\)`
-    MathJax.Hub.Typeset()
-})
+// summationButton.addEventListener('click', () => {
+//     let start_position = equationInput.selectionStart;
+//     let end_position = equationInput.selectionEnd;
+
+//     equationInput.value = `${equationInput.value.substring(0, start_position)}${'\\sum_{i}^{k}'}${equationInput.value.substring(end_position,equationInput.value.length)}`
+//     // equationInput.setSelectionRange(end, end)
+//     equationInput.focus()
+//     equationPreview.innerHTML = `\\(${equationInput.value}\\)`
+//     MathJax.Hub.Typeset()
+// })
 
 directLimitBtn.addEventListener('click', () => {
     equationInput.focus()
@@ -776,7 +786,7 @@ gtApproxBtn.addEventListener('click', () => {
 
 appoximationBtn.addEventListener('click', () => {
     equationInput.focus()
-    equationInput.value += '\\\ll '
+    equationInput.value += '\\approx '
     equationPreview.innerHTML = `\\(${equationInput.value}\\)`
     MathJax.Hub.Typeset()
 })
@@ -788,19 +798,19 @@ lessLessBtn.addEventListener('click', () => {
     MathJax.Hub.Typeset()
 })
 
-equivalenceClassBtn.lessLessBtngt.addEventListener('click', () => {
+equivalenceClassBtn.addEventListener('click', () => {
     equationInput.focus()
     equationInput.value += '\\ll '
     equationPreview.innerHTML = `\\(${equationInput.value}\\)`
     MathJax.Hub.Typeset()
 })
 
-greaterGreaterBtn.lessLessBtngt.addEventListener('click', () => {
-    equationInput.focus()
-    equationInput.value += '\\ll '
-    equationPreview.innerHTML = `\\(${equationInput.value}\\)`
-    MathJax.Hub.Typeset()
-})
+// greaterGreaterBtn.addEventListener('click', () => {
+//     equationInput.focus()
+//     equationInput.value += '\\ll '
+//     equationPreview.innerHTML = `\\(${equationInput.value}\\)`
+//     MathJax.Hub.Typeset()
+// })
 
 /// Matrix section event listeners /////////////////////////////////////////////////////////////
 bracketsMatrixBtn.addEventListener('click', () => {
@@ -824,16 +834,14 @@ pipesMatrixBtn.addEventListener('click', () => {
     MathJax.Hub.Typeset()
 })
 
-bracesMatrixBtn.addEventListener('click', () => {
-    equationInput.focus()
-    equationInput.value += '\\begin{Bmatrix}a & b \\\\ c & d\\end{Bmatrix} '
-    equationPreview.innerHTML = `\\(${equationInput.value}\\)`
-    MathJax.Hub.Typeset()
-})
+// bracesMatrixBtn.addEventListener('click', () => {
+//     equationInput.focus()
+//     equationInput.value += '\\begin{Bmatrix}a & b \\\\ c & d\\end{Bmatrix} '
+//     equationPreview.innerHTML = `\\(${equationInput.value}\\)`
+//     MathJax.Hub.Typeset()
+// })
 
 ///////////////////////////////////////////////////////////////////////////////////////////
-
-
 
 insertBtn.addEventListener('click', () => {
     // MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
@@ -841,4 +849,30 @@ insertBtn.addEventListener('click', () => {
     element.editor.insertAttachment(attachment)
     symbolsBox.classList.add('hide');
     editorContainer.classList.add('hide');
+})
+
+const symbolButtons = [
+    {
+        name: bracesMatrixBtn,
+        value: '\\begin{Bmatrix}a & b \\\\ c & d\\end{Bmatrix} ',
+    },
+    {
+        name: greaterGreaterBtn,
+        value: '\\ll '
+    },
+    {
+        name: summationButton,
+        value: '\\sum_{i}^{k} '
+    }
+]
+
+symbolButtons.forEach(button => {
+    button.name.addEventListener('click', () => {
+        let start_position = equationInput.selectionStart;
+        let end_position = equationInput.selectionEnd;
+        equationInput.value = `${equationInput.value.substring(0, start_position)}${button.value}${equationInput.value.substring(end_position,equationInput.value.length)}`
+        equationInput.focus()
+        equationPreview.innerHTML = `\\(${equationInput.value}\\)`
+        MathJax.Hub.Typeset()
+    })
 })
