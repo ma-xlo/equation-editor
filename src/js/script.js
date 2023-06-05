@@ -56,18 +56,62 @@ const thethaBtn = document.querySelector('#thetha-btn')
 const vacuumPermittivityBtn = document.querySelector('#vacuum-permittivity-btn')
 const deltaBtn = document.querySelector('#delta-btn')
 
-// Matrices buttons variables ////////////////////////////////////////////////////////////////
+// Trigonometry buttons variables/////////////////////////////////////////////////////////////
 const bracketsMatrixBtn = document.querySelector('#brackets-matrix-btn')
 const parenthesesMatrixBtn = document.querySelector('#parentheses-matrix-btn')
 const bracesMatrixBtn = document.querySelector('#braces-matrix-btn')
 const pipesMatrixBtn = document.querySelector('#pipes-matrix-btn')
 
-// const realSymbolBtn = document.querySelector('#real-symbol-btn')
-// const elementOfBtn = document.querySelector('#element-of-btn')
-// const notElementOfBtn = document.querySelector('#not-element-of-btn')
-// const subsetBtn = document.querySelector('#subset-btn')
-// const plusMinusBtn = document.querySelector('#plus-minus-btn')
+// Logical buttons variables /////////////////////////////////////////////////////////////////
+const logicalConjunctionBtn = document.querySelector('#logical-conjunction-btn')
+const logicalDisjunctionBtn = document.querySelector('#logical-disjunction-btn')
+const logicalEquivShortBtn = document.querySelector('#logical-equivalence-short-btn')
+const logicalEquivLongBtn = document.querySelector('#logical-equivalence-long-btn')
+const contradictionBtn = document.querySelector('#contradiction-btn')
+const deductiveReasoningBtn = document.querySelector('#deductive-reasoning-btn')
+const existentialQuantBtn = document.querySelector('#existential-quantification-btn')
+const logicalNegtaionBtn = document.querySelector('#logical-negation-btn')
+const logicalEquivBtn = document.querySelector('#logical-equivalence-single')
+const shortRightArrowBtn = document.querySelector('#short-right-arrow-btn')
+const longRightArrowBtn = document.querySelector('#long-right-arrow-btn')
+const tautologyBtn = document.querySelector('#tautology-btn')
+const uniquessQuantBtn = document.querySelector('#uniqueness-quantification-btn')
+const universalQuantBtn = document.querySelector('#universal-quantification-btn')
+const exclusiveOrBtn = document.querySelector('#exclusive-or-btn')
 
+// Logical buttons variables /////////////////////////////////////////////////////////////////
+const intersectionBtn = document.querySelector('#intersection-small-btn')
+const unionBtn = document.querySelector('#union-small-btn')
+const elementOfBtn = document.querySelector('#element-of-btn')
+const notElementOfBtn = document.querySelector('#not-element-of-btn')
+const subsetBtn = document.querySelector('#subset-btn')
+const notSubsetBtn = document.querySelector('#not-subset-btn')
+
+// Arrows buttons variables //////////////////////////////////////////////////////////////////
+const leftArrowBtn = document.querySelector('#left-arrow-btn')
+const rightArrowBtn = document.querySelector('#right-arrow')
+const longLeftArrowBtn = document.querySelector('#long-left-arrow-btn')
+const longRigthArrowBtn = document.querySelector('#long-right-arrow-btn')
+
+// Trigonometry buttons variables ////////////////////////////////////////////////////////////
+const sinBtn = document.querySelector('#sin-btn')
+const cosBtn = document.querySelector('#cos-btn')
+const tanBtn = document.querySelector('#tan-btn')
+
+// Comparison buttons variables //////////////////////////////////////////////////////////////
+const lesserThanBtn = document.querySelector('#lesser-than-btn')
+const equalityBtn = document.querySelector('#equality-btn')
+const greaterThanBtn = document.querySelector('#greater-than-btn')
+const plusMinusBtn = document.querySelector('#plus-minus-btn')
+const leqslantBtn = document.querySelector('#leqslant-btn')
+const identityBtn = document.querySelector('#identity-btn')
+const geqslantBtn = document.querySelector('#geqslant-btn')
+const lessAproxBtn = document.querySelector('#lessapprox-btn')
+const appoximationBtn = document.querySelector('#approximation-btn')
+const gtApproxBtn = document.querySelector('#gtrappox-btn')
+const lessLessBtn = document.querySelector('#lessless-btn')
+const equivalenceClassBtn = document.querySelector('#equivalence-class-btn')
+const greaterGreaterBtn = document.querySelector('#greater-greater-btn')
 
 // Sections elements /////////////////////////////////////////////////////////////////////////
 // Main section
@@ -90,9 +134,7 @@ const comparisonSection = document.querySelector("#comparison-section")
 const comparisonSectionButtons = document.querySelectorAll("#comparison-section button")
 const hiddenComparisonSymbols = document.querySelector("#hidden-comparison-symbols")
 
-
-
-/// Editor event listeners /////////////////////////////////////////////////////////////////////////
+/// Editor event listeners ///////////////////////////////////////////////////////////////////
 equationInput.addEventListener('keyup', () => {
     equationInput.focus();
     equationInput.value = equationInput.value.replaceAll('*', '⋅')
@@ -125,13 +167,12 @@ editorCloseBtn.addEventListener('click', () => {
 })
 
 editorBtn.addEventListener('click', () => {
-    
     editorBox.classList.remove('hide');
     equationInput.focus();
 })
 
 
-/// Sections event listeners ////////////////////////////////////////////////////////////////////////
+/// Sections event listeners //////////////////////////////////////////////////////////////////
 section_1_btn.forEach(element => {
     element.addEventListener('mouseover', () => {
             hiddenSection_1.classList.remove('hide')
@@ -205,7 +246,7 @@ comparisonSection.addEventListener('mouseout', ()=>{
         hiddenComparisonSymbols.classList.add('hide')
 })
 
-/// Main section event listeners ////////////////////////////////////////////////////////////
+/// Main section event listeners //////////////////////////////////////////////////////////////
 limitBtn.addEventListener('click', () => {
     equationInput.focus()
     equationInput.value += '\\lim_{x \\rightarrow a} f(x) '
@@ -297,7 +338,7 @@ curveIntegralBtn.addEventListener('click', () => {
     MathJax.Hub.Typeset()
 })
 
-/// Basic operations event listeners /////////////////////////////////////////////////////////
+/// Basic operations event listeners //////////////////////////////////////////////////////////
 logButton.addEventListener('click', () => {
     equationInput.focus()
     equationInput.value += '\\log_{b}{n} '
@@ -461,6 +502,306 @@ deltaBtn.addEventListener('click', () => {
     MathJax.Hub.Typeset()
 })
 
+/// Trigonometry section event listeners ///////////////////////////////////////////////////////
+sinBtn.addEventListener('click', () => {
+    equationInput.focus()
+    equationInput.value += '\\sin '
+    equationPreview.innerHTML = `\\(${equationInput.value}\\)`
+    MathJax.Hub.Typeset()
+})
+cosBtn.addEventListener('click', () => {
+    equationInput.focus()
+    equationInput.value += '\\cos '
+    equationPreview.innerHTML = `\\(${equationInput.value}\\)`
+    MathJax.Hub.Typeset()
+})
+tanBtn.addEventListener('click', () => {
+    equationInput.focus()
+    equationInput.value += '\\tan '
+    equationPreview.innerHTML = `\\(${equationInput.value}\\)`
+    MathJax.Hub.Typeset()
+})
+
+/// Logical section event listeners ////////////////////////////////////////////////////////////
+
+logicalConjunctionBtn.addEventListener('click', () => {
+    equationInput.focus()
+    equationInput.value += '\\land '
+    equationPreview.innerHTML = `\\(${equationInput.value}\\)`
+    MathJax.Hub.Typeset()
+})
+
+logicalDisjunctionBtn.addEventListener('click', () => {
+    equationInput.focus()
+    equationInput.value += '\\lor '
+    equationPreview.innerHTML = `\\(${equationInput.value}\\)`
+    MathJax.Hub.Typeset()
+})
+
+logicalEquivShortBtn.addEventListener('click', () => {
+    equationInput.focus()
+    equationInput.value += '\\Leftrightarrow '
+    equationPreview.innerHTML = `\\(${equationInput.value}\\)`
+    MathJax.Hub.Typeset()
+})
+
+logicalEquivLongBtn.addEventListener('click', () => {
+    equationInput.focus()
+    equationInput.value += '\\iff '
+    equationPreview.innerHTML = `\\(${equationInput.value}\\)`
+    MathJax.Hub.Typeset()
+})
+
+contradictionBtn.addEventListener('click', () => {
+    equationInput.focus()
+    equationInput.value += '\\bot '
+    equationPreview.innerHTML = `\\(${equationInput.value}\\)`
+    MathJax.Hub.Typeset()
+})
+
+deductiveReasoningBtn.addEventListener('click', () => {
+    equationInput.focus()
+    equationInput.value += '\\therefore '
+    equationPreview.innerHTML = `\\(${equationInput.value}\\)`
+    MathJax.Hub.Typeset()
+})
+
+existentialQuantBtn.addEventListener('click', () => {
+    equationInput.focus()
+    equationInput.value += '\\exists '
+    equationPreview.innerHTML = `\\(${equationInput.value}\\)`
+    MathJax.Hub.Typeset()
+})
+
+logicalNegtaionBtn.addEventListener('click', () => {
+    equationInput.focus()
+    equationInput.value += '\\lnot '
+    equationPreview.innerHTML = `\\(${equationInput.value}\\)`
+    MathJax.Hub.Typeset()
+})
+
+logicalEquivBtn.addEventListener('click', () => {
+    equationInput.focus()
+    equationInput.value += '\\leftrightarrow '
+    equationPreview.innerHTML = `\\(${equationInput.value}\\)`
+    MathJax.Hub.Typeset()
+})
+
+shortRightArrowBtn.addEventListener('click', () => {
+    equationInput.focus()
+    equationInput.value += '\\rightarrow '
+    equationPreview.innerHTML = `\\(${equationInput.value}\\)`
+    MathJax.Hub.Typeset()
+})
+
+longRightArrowBtn.addEventListener('click', () => {
+    equationInput.focus()
+    equationInput.value += '\\implies '
+    equationPreview.innerHTML = `\\(${equationInput.value}\\)`
+    MathJax.Hub.Typeset()
+})
+
+tautologyBtn.addEventListener('click', () => {
+    equationInput.focus()
+    equationInput.value += '\\top '
+    equationPreview.innerHTML = `\\(${equationInput.value}\\)`
+    MathJax.Hub.Typeset()
+})
+
+uniquessQuantBtn.addEventListener('click', () => {
+    equationInput.focus()
+    equationInput.value += '\\exists! '
+    equationPreview.innerHTML = `\\(${equationInput.value}\\)`
+    MathJax.Hub.Typeset()
+})
+
+universalQuantBtn.addEventListener('click', () => {
+    equationInput.focus()
+    equationInput.value += '\\forall '
+    equationPreview.innerHTML = `\\(${equationInput.value}\\)`
+    MathJax.Hub.Typeset()
+})
+
+exclusiveOrBtn.addEventListener('click', () => {
+    equationInput.focus()
+    equationInput.value += '\\veebar '
+    equationPreview.innerHTML = `\\(${equationInput.value}\\)`
+    MathJax.Hub.Typeset()
+})
+
+/// Set operations section event listeners /////////////////////////////////////////////////////
+intersectionBtn.addEventListener('click', () => {
+    equationInput.focus()
+    equationInput.value += '\\cap '
+    equationPreview.innerHTML = `\\(${equationInput.value}\\)`
+    MathJax.Hub.Typeset()
+})
+
+unionBtn.addEventListener('click', () => {
+    equationInput.focus()
+    equationInput.value += '\\cup '
+    equationPreview.innerHTML = `\\(${equationInput.value}\\)`
+    MathJax.Hub.Typeset()
+})
+
+subsetBtn.addEventListener('click', () => {
+    equationInput.focus()
+    equationInput.value += '\\subset '
+    equationPreview.innerHTML = `\\(${equationInput.value}\\)`
+    MathJax.Hub.Typeset()
+})
+
+elementOfBtn.addEventListener('click', () => {
+    equationInput.focus()
+    equationInput.value += '\\in '
+    equationPreview.innerHTML = `\\(${equationInput.value}\\)`
+    MathJax.Hub.Typeset()
+})
+
+notElementOfBtn.addEventListener('click', () => {
+    equationInput.focus()
+    equationInput.value += '\\notin '
+    equationPreview.innerHTML = `\\(${equationInput.value}\\)`
+    MathJax.Hub.Typeset()
+})
+
+notSubsetBtn.addEventListener('click', () => {
+    equationInput.focus()
+    equationInput.value += '\\subset '
+    equationPreview.innerHTML = `\\(${equationInput.value}\\)`
+    MathJax.Hub.Typeset()
+})
+
+/// Arrow section event listeners /////////////////////////////////////////////////////////////
+
+leftArrowBtn.addEventListener('click', () => {
+    equationInput.focus()
+    equationInput.value += '\\leftarrow '
+    equationPreview.innerHTML = `\\(${equationInput.value}\\)`
+    MathJax.Hub.Typeset()
+})
+
+rightArrowBtn.addEventListener('click', () => {
+    equationInput.focus()
+    equationInput.value += '\\rightarrow '
+    equationPreview.innerHTML = `\\(${equationInput.value}\\)`
+    MathJax.Hub.Typeset()
+})
+
+longLeftArrowBtn.addEventListener('click', () => {
+    equationInput.focus()
+    equationInput.value += '\\longleftarrow '
+    equationPreview.innerHTML = `\\(${equationInput.value}\\)`
+    MathJax.Hub.Typeset()
+})
+
+longRightArrowBtn.addEventListener('click', () => {
+    equationInput.focus()
+    equationInput.value += '\\longrightarrow '
+    equationPreview.innerHTML = `\\(${equationInput.value}\\)`
+    MathJax.Hub.Typeset()
+})
+
+/// Comparison section event listeners /////////////////////////////////////////////////////////
+
+lesserThanBtn.addEventListener('click', () => {
+    equationInput.focus()
+    equationInput.value += '\\lt'
+    equationPreview.innerHTML = `\\(${equationInput.value}\\)`
+    MathJax.Hub.Typeset()
+})
+
+equalityBtn.addEventListener('click', () => {
+    equationInput.focus()
+    equationInput.value += '= '
+    equationPreview.innerHTML = `\\(${equationInput.value}\\)`
+    MathJax.Hub.Typeset()
+})
+
+greaterThanBtn.addEventListener('click', () => {
+    equationInput.focus()
+    equationInput.value += '> '
+    equationPreview.innerHTML = `\\(${equationInput.value}\\)`
+    MathJax.Hub.Typeset()
+})
+
+plusMinusBtn.addEventListener('click', () => {
+    equationInput.focus()
+    equationInput.value += '\\pm '
+    equationPreview.innerHTML = `\\(${equationInput.value}\\)`
+    MathJax.Hub.Typeset()
+})
+
+greaterThanBtn.addEventListener('click', () => {
+    equationInput.focus()
+    equationInput.value += '> '
+    equationPreview.innerHTML = `\\(${equationInput.value}\\)`
+    MathJax.Hub.Typeset()
+})
+
+leqslantBtn.addEventListener('click', () => {
+    equationInput.focus()
+    equationInput.value += '\\leq '
+    equationPreview.innerHTML = `\\(${equationInput.value}\\)`
+    MathJax.Hub.Typeset()
+})
+
+identityBtn.addEventListener('click', () => {
+    equationInput.focus()
+    equationInput.value += '\\equiv '
+    equationPreview.innerHTML = `\\(${equationInput.value}\\)`
+    MathJax.Hub.Typeset()
+})
+
+geqslantBtn.addEventListener('click', () => {
+    equationInput.focus()
+    equationInput.value += '\\geq '
+    equationPreview.innerHTML = `\\(${equationInput.value}\\)`
+    MathJax.Hub.Typeset()
+})
+
+lessAproxBtn.addEventListener('click', () => {
+    equationInput.focus()
+    equationInput.value += '\\lessapprox '
+    equationPreview.innerHTML = `\\(${equationInput.value}\\)`
+    MathJax.Hub.Typeset()
+})
+
+gtApproxBtn.addEventListener('click', () => {
+    equationInput.focus()
+    equationInput.value += '\\gtrapprox '
+    equationPreview.innerHTML = `\\(${equationInput.value}\\)`
+    MathJax.Hub.Typeset()
+})
+
+appoximationBtn.addEventListener('click', () => {
+    equationInput.focus()
+    equationInput.value += '\\\ll '
+    equationPreview.innerHTML = `\\(${equationInput.value}\\)`
+    MathJax.Hub.Typeset()
+})
+
+lessLessBtn.addEventListener('click', () => {
+    equationInput.focus()
+    equationInput.value += '\\ll '
+    equationPreview.innerHTML = `\\(${equationInput.value}\\)`
+    MathJax.Hub.Typeset()
+})
+
+equivalenceClassBtn.lessLessBtngt.addEventListener('click', () => {
+    equationInput.focus()
+    equationInput.value += '\\ll '
+    equationPreview.innerHTML = `\\(${equationInput.value}\\)`
+    MathJax.Hub.Typeset()
+})
+
+greaterGreaterBtn.lessLessBtngt.addEventListener('click', () => {
+    equationInput.focus()
+    equationInput.value += '\\ll '
+    equationPreview.innerHTML = `\\(${equationInput.value}\\)`
+    MathJax.Hub.Typeset()
+})
+
 /// Matrix section event listeners /////////////////////////////////////////////////////////////
 bracketsMatrixBtn.addEventListener('click', () => {
     equationInput.focus()
@@ -493,34 +834,6 @@ bracesMatrixBtn.addEventListener('click', () => {
 ///////////////////////////////////////////////////////////////////////////////////////////
 
 
-
-// subsetBtn.addEventListener('click', () => {
-//     equationInput.focus()
-//     equationInput.value += '\\subset '
-//     equationPreview.innerHTML = `\\(${equationInput.value}\\)`
-//     MathJax.Hub.Typeset()
-// })
-
-// elementOfBtn.addEventListener('click', () => {
-//     equationInput.focus()
-//     equationInput.value += '\\in '
-//     equationPreview.innerHTML = `\\(${equationInput.value}\\)`
-//     MathJax.Hub.Typeset()
-// })
-
-// notElementOfBtn.addEventListener('click', () => {
-//     equationInput.focus()
-//     equationInput.value += '\\notin '
-//     equationPreview.innerHTML = `\\(${equationInput.value}\\)`
-//     MathJax.Hub.Typeset()
-// })
-
-// plusMinusBtn.addEventListener('click', () => {
-//     equationInput.focus()
-//     equationInput.value += '\\pm '
-//     equationPreview.innerHTML = `\\(${equationInput.value}\\)`
-//     MathJax.Hub.Typeset()
-// })
 
 insertBtn.addEventListener('click', () => {
     // MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
