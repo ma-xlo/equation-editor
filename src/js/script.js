@@ -870,7 +870,9 @@ symbolButtons.forEach(button => {
     button.name.addEventListener('click', () => {
         let start_position = equationInput.selectionStart;
         let end_position = equationInput.selectionEnd;
+        
         equationInput.value = `${equationInput.value.substring(0, start_position)}${button.value}${equationInput.value.substring(end_position,equationInput.value.length)}`
+        
         equationInput.focus()
         equationPreview.innerHTML = `\\(${equationInput.value}\\)`
         MathJax.Hub.Typeset()
