@@ -1,61 +1,77 @@
 const symbolButtons = [
     {
-        button:  document.querySelector('#limit-btn'),
-        value: '\\lim_{x \\rightarrow a} f(x) '
+        name: "Limit",
+        button: document.querySelector('#limit-btn'),
+        // value: '\\lim_{x \\rightarrow a} f(x) '
+        value: '\\lim\\limits_{x \\to y} f(x)'
     },
     {
-        button:  document.querySelector('#integral-btn'),
-        value: '\\int_{b}^{a} '
+        name: "Integral",
+        button: document.querySelector('#integral-btn'),
+        value: '\\int '
     },
     {
+        name: "Productory",
         button: document.querySelector('#productory-btn'),
         value: '\\prod_{i}^{k} '
     },
     {
+        name: "Summation",
         button: document.querySelector('#summation-btn'),
         value: '\\sum_{i}^{k} '
     },
     {
+        name: "Direct Limit",
         button: document.querySelector('#direct-limit-btn'),
         value: '\\sum_{i}^{k} '
     },
     {
+        name: "Integral With Variables",
         button: document.querySelector('#var-integral-btn'),
         value: '\\int_{a}^{b} '
     },
     {
+        name: "Coproduct",
         button: document.querySelector('#coproductory-btn'),
         value: '\\coprod '
     },
     {
+        name: "Surface Integral",
         button: document.querySelector('#surface-integral-btn'),
         value: '\\iint ',
     },
     {
+        name: "Limit Superior",
         button: document.querySelector('#limit-superior-btn'),
         value: '\\varlimsup '
     },
     {
+        name: "Volume Integral",
         button: document.querySelector('#volume-integral-btn'),
         value: '\\iiint '
     },
     {
+        name: "Limit Inferior",
         button: document.querySelector('#limit-inferior-btn'),
         value: '\\varliminf '
     },
     {
+        name: "Curve Integral",
         button: document.querySelector('#curve-integral-btn'),
         value: '\\oint '
     },
     {
+        name: "Logarithm",
         button: document.querySelector('#log-btn'),
         value: '\\log_{b}{n} '
     },
     {
+        name: "1st Function",
         button: document.querySelector('#function-btn'),
         value: 'f(x) '
     },
     {
+        name: "Square Root",
         button: document.querySelector('#sqrt-btn'),
         value: '\\sqrt{} '
     },
@@ -115,7 +131,6 @@ const symbolButtons = [
         button: document.querySelector('#ramanujan-soldner-btn'),
         value: '\\mu '
     },
-
     {
         button: document.querySelector('#somos-quadratic-recurrence-btn'),
         value: '\\sigma '
@@ -166,11 +181,11 @@ const symbolButtons = [
     },
     {
         button: document.querySelector('#existential-quantification-btn'),
-        value: '\\lnot '
+        value: '\\exists '
     },
     {
         button: document.querySelector('#logical-negation-btn'),
-        value: '\\exists '
+        value: '\\lnot '
     },
     {
         button: document.querySelector('#logical-equivalence-single'),
@@ -180,10 +195,6 @@ const symbolButtons = [
         button: document.querySelector('#short-right-arrow-btn'),
         value: '\\rightarrow '
     }, 
-    {
-        button: document.querySelector('#long-right-arrow-btn'),
-        value: '\\implies '
-    },
     {
         button: document.querySelector('#tautology-btn'),
         value: '\\top '
@@ -307,6 +318,18 @@ const symbolButtons = [
     {
         button: document.querySelector('#parentheses-matrix-btn'),
         value: '\\begin{vmatrix}a & b \\\\ c & d\\end{vmatrix} '
+    },
+    {
+        button: document.querySelector('#sin-btn'),
+        value: '\\sin '
+    },
+    {
+        button: document.querySelector('#cos-btn'),
+        value: '\\cos '
+    },
+    {
+        button: document.querySelector('#tan-btn'),
+        value: '\\tan '
     },
 ]
 
