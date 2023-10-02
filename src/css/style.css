@@ -25,14 +25,22 @@ trix-editor{
     height: 240px;
 }
 
+footer {
+    position:fixed;
+    bottom:0;
+    text-align: center;
+}
+
 .editor-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
     flex-wrap: wrap;
     gap: 10px;
     position: absolute;
+
+    max-width: 70%;
+    border: 2px solid green;
 }
 
 .symbols-container{
@@ -48,6 +56,9 @@ trix-editor{
     border:1px solid rgb(210, 210, 210);
     border-radius: 7px;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.193);
+
+    /* border: 2px solid rgb(0, 153, 255); */
+
 
 }
 .symbol-btn {
@@ -98,15 +109,6 @@ trix-editor{
     flex-direction: row-reverse;
 }
 
-.equation-box{
-    display: flex;
-    gap: 5px;
-    padding: 2px;
-    width: 100%;
-    margin-bottom: 15px;
-
-}
-
 .equation-editor{
     background-color: rgb(255, 255, 255);
     display: flex;
@@ -118,6 +120,9 @@ trix-editor{
     border:1px solid rgb(210, 210, 210);
     border-radius: 7px;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.193);
+
+    border: 2px solid rgb(255, 0, 0);
+
 }
 
 .editor-close-btn {
@@ -129,6 +134,7 @@ trix-editor{
     border: none;
     font-size: 14pt;
 }
+
 .editor-close-btn:hover {
     color: rgb(0, 0, 0);
     cursor: pointer;
