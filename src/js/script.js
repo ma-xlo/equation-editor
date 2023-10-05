@@ -21,12 +21,36 @@ class Button {
             let end_position = equationInput.selectionEnd;
             
             equationInput.value = `${equationInput.value.substring(0, start_position)}${element.value}${equationInput.value.substring(end_position,equationInput.value.length)}`
-            
             equationInput.focus()
             equationPreview.innerHTML = `\\(${equationInput.value}\\)`
             MathJax.Hub.Typeset()
         })
     }
+
+    checkFontSize(element){
+        let equationPreview = document.querySelector(".equation-preview")
+        const startWidth = window.getComputedStyle(equationPreview).getPropertyValue('width');
+
+        element.button.addEventListener('click', () => {
+            let currentFontSize = window.getComputedStyle(equationPreview).getPropertyValue('font-size');
+            let fontSize = parseInt(currentFontSize)
+            const currentWidth = window.getComputedStyle(equationPreview).getPropertyValue('width');
+
+            console.log(currentFontSize)
+            console.log(fontSize)
+            
+            console.log(startWidth)
+            console.log(currentWidth)
+
+            if(parseFloat(currentWidth) > parseFloat(startWidth)) {
+                fontSize -= 5
+                equationPreview.style.fontSize = `${fontSize}px`
+                console.log("hello")
+            }
+
+        })
+    }
+
 }
 
 /// Editor buttons ///////////////////////////////////////////////////////////////////////////
@@ -71,10 +95,11 @@ equationInput.addEventListener('keyup', () => {
     MathJax.Hub.Typeset()
     // MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
 })
+
 equationInput.addEventListener('keyup', event => {
     equationInput.focus();
     equationPreview.innerHTML = `\\(${equationInput.value}\\)`
-    // MathJax.Hub.Typeset()
+    MathJax.Hub.Typeset()
 
     // if(event.key === 'Enter') {
     //     equationInput.focus();
@@ -82,10 +107,14 @@ equationInput.addEventListener('keyup', event => {
     //     MathJax.Hub.Typeset()
     // }
     MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+
+
 })
+
 clearBtn.addEventListener('click', () => {
     equationPreview.innerHTML = equationInput.value = '';
     equationInput.focus();
+    equationPreview.style.fontSize = `${30}px`
 })
 symbolsBoxBtn.addEventListener('click', ()=>{
     symbolsBox.classList.toggle('hide');
@@ -177,5 +206,6 @@ symbolButtons.forEach(element => {
     let button = new Button();
     button.setButton(element.button)
     button.setValue(element.value)
+    button.checkFontSize(element)
     button.setEventListener(element)
 })
