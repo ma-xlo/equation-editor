@@ -21,31 +21,27 @@ class Button {
             let end_position = equationInput.selectionEnd;
             
             equationInput.value = `${equationInput.value.substring(0, start_position)}${element.value}${equationInput.value.substring(end_position,equationInput.value.length)}`
-            equationInput.focus()
+            // equationInput.focus()
             equationPreview.innerHTML = `\\(${equationInput.value}\\)`
             MathJax.Hub.Typeset()
         })
     }
 
     checkFontSize(element){
-        let equationPreview = document.querySelector(".equation-preview")
-        const startWidth = window.getComputedStyle(equationPreview).getPropertyValue('width');
+        let equationEditor = document.querySelector(".equation-editor")
+        const startWidth = window.getComputedStyle(equationEditor).getPropertyValue('width');
 
         element.button.addEventListener('click', () => {
-            let currentFontSize = window.getComputedStyle(equationPreview).getPropertyValue('font-size');
+            let currentFontSize = window.getComputedStyle(equationEditor).getPropertyValue('font-size');
             let fontSize = parseInt(currentFontSize)
-            const currentWidth = window.getComputedStyle(equationPreview).getPropertyValue('width');
+            const currentWidth = window.getComputedStyle(equationEditor).getPropertyValue('width');
 
-            console.log(currentFontSize)
-            console.log(fontSize)
-            
             console.log(startWidth)
             console.log(currentWidth)
 
             if(parseFloat(currentWidth) > parseFloat(startWidth)) {
                 fontSize -= 5
                 equationPreview.style.fontSize = `${fontSize}px`
-                console.log("hello")
             }
 
         })
@@ -89,33 +85,20 @@ const hiddenComparisonSymbols = document.querySelector("#hidden-comparison-symbo
 
 /// Editor event listeners ///////////////////////////////////////////////////////////////////
 equationInput.addEventListener('keyup', () => {
-    equationInput.focus();
     equationInput.value = equationInput.value.replaceAll('*', '⋅')
     equationPreview.innerHTML = `\\(${equationInput.value}\\)`
     MathJax.Hub.Typeset()
-    // MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
-})
-
-equationInput.addEventListener('keyup', event => {
     equationInput.focus();
-    equationPreview.innerHTML = `\\(${equationInput.value}\\)`
-    MathJax.Hub.Typeset()
 
-    // if(event.key === 'Enter') {
-    //     equationInput.focus();
-    //     equationInput.value += `\n\\\\`
-    //     MathJax.Hub.Typeset()
-    // }
-    MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
-
-
+    // MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
 })
 
 clearBtn.addEventListener('click', () => {
     equationPreview.innerHTML = equationInput.value = '';
     equationInput.focus();
-    equationPreview.style.fontSize = `${30}px`
+    equationPreview.style.fontSize = '30px'
 })
+
 symbolsBoxBtn.addEventListener('click', ()=>{
     symbolsBox.classList.toggle('hide');
 })

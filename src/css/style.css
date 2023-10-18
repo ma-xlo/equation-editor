@@ -30,14 +30,13 @@ footer {
     bottom: 0;
     position: fixed;
     text-align: center;
-    background-color: #000000c0;
-    color: #ffffff;
     width: 100%;
 }
 
 footer a {
     color: rgb(0, 158, 158);
 }
+
 .editor-container {
     z-index: 1;
     display: flex;
@@ -128,9 +127,7 @@ footer a {
     border:1px solid rgb(210, 210, 210);
     border-radius: 7px;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.193);
-
     /* border: 2px solid rgb(255, 0, 0); */
-
 }
 
 .editor-close-btn {
@@ -141,6 +138,9 @@ footer a {
     background-color: transparent;
     border: none;
     font-size: 14pt;
+
+    margin: -15px -15px 10px 0px;
+
 }
 
 .editor-close-btn:hover {
@@ -185,9 +185,9 @@ footer a {
     outline: none;
     padding: 20px;
     margin-bottom: 10px;
-
-    border: 1px solid green;
-
+    overflow: hidden;
+    /* border:1px solid rgb(81, 255, 0); */
+   
 }
 
 .generator-btn{
@@ -220,6 +220,7 @@ footer a {
     padding-left: 5px;
     border: 1px solid rgb(180, 180, 180);
     box-sizing: border-box;
+    padding: 10px 42px 20px 10px;
 }
 
 .editor-btn {
@@ -227,7 +228,7 @@ footer a {
     color: rgb(255, 255, 255);
     font-size: 11pt;
     font-weight: 500;
-    width: 100px;
+    width: 200px;
     height: 35px;
     border: none;
     border-radius: 7px;
@@ -250,10 +251,13 @@ footer a {
     }
 
 
+
+
 }
 
 @media screen and (max-width: 950px) {
     trix-editor{
         width: 90%;
     }
+
 }
