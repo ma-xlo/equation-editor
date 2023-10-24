@@ -313,11 +313,11 @@ const symbolButtons = [
     },
     {
         button: document.querySelector('#pipes-matrix-btn'),
-        value: '\\begin{pmatrix}a & b \\\\ c & d\\end{pmatrix} '
+        value: '\\begin{vmatrix}a & b \\\\ c & d\\end{vmatrix} '
     },
     {
         button: document.querySelector('#parentheses-matrix-btn'),
-        value: '\\begin{vmatrix}a & b \\\\ c & d\\end{vmatrix} '
+        value: '\\begin{pmatrix}a & b \\\\ c & d\\end{pmatrix} '
     },
     {
         button: document.querySelector('#sin-btn'),

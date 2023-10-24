@@ -1,53 +1,6 @@
-import symbolButtons from "./buttons.js"
+import symbolButtons from "./symbolButtons.js"
+import Button from "../../core/entity/button.js"
 
-class Button {
-    constructor(name, button, value) {
-        this.name = name
-        this.button = button
-        this.value = value
-    }
-    setName(name) {
-        this.name = name
-    }
-    setButton(button){
-        this.button = button
-    }
-    setValue(value){
-        this.value = value
-    }
-    setEventListener(element){
-        element.button.addEventListener('click', () => {
-            let start_position = equationInput.selectionStart;
-            let end_position = equationInput.selectionEnd;
-            
-            equationInput.value = `${equationInput.value.substring(0, start_position)}${element.value}${equationInput.value.substring(end_position,equationInput.value.length)}`
-            // equationInput.focus()
-            equationPreview.innerHTML = `\\(${equationInput.value}\\)`
-            MathJax.Hub.Typeset()
-        })
-    }
-
-    checkFontSize(element){
-        let equationEditor = document.querySelector(".equation-editor")
-        const startWidth = window.getComputedStyle(equationEditor).getPropertyValue('width');
-
-        element.button.addEventListener('click', () => {
-            let currentFontSize = window.getComputedStyle(equationEditor).getPropertyValue('font-size');
-            let fontSize = parseInt(currentFontSize)
-            const currentWidth = window.getComputedStyle(equationEditor).getPropertyValue('width');
-
-            console.log(startWidth)
-            console.log(currentWidth)
-
-            if(parseFloat(currentWidth) > parseFloat(startWidth)) {
-                fontSize -= 5
-                equationPreview.style.fontSize = `${fontSize}px`
-            }
-
-        })
-    }
-
-}
 
 /// Editor buttons ///////////////////////////////////////////////////////////////////////////
 const equationInput = document.querySelector('#equation-input')
@@ -186,9 +139,19 @@ insertBtn.addEventListener('click', () => {
 })
 
 symbolButtons.forEach(element => {
+    
     let button = new Button();
+    
     button.setButton(element.button)
     button.setValue(element.value)
-    button.checkFontSize(element)
-    button.setEventListener(element)
+
+    element.button.addEventListener('click', () => {
+        let start_position = equationInput.selectionStart;
+        let end_position = equationInput.selectionEnd;
+        
+        equationInput.value = `${equationInput.value.substring(0, start_position)}${element.value}${equationInput.value.substring(end_position,equationInput.value.length)}`
+        equationInput.focus()
+        equationPreview.innerHTML = `\\(${equationInput.value}\\)`
+        MathJax.Hub.Typeset()
+    })
 })
